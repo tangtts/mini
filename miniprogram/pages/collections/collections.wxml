@@ -1,0 +1,20 @@
+<!--pages/collections/collections.wxml-->
+
+<block wx:if="{{list.length}}">
+  <van-skeleton title row="2" loading="{{ loading }}">
+    <van-cell-group>
+      <van-swipe-cell right-width="{{ 120 }}" wx:for="{{list}}" wx:key="_id">
+        <van-cell title="{{item.restaurantName}}" label="{{item.restaurantAddress}}" icon="star" data-id="{{item._id}}" bind:click="clickCell">
+        </van-cell>
+
+        <view slot="right" class="collect" bind:tap="unCollect" data-id="{{item.collectId}}">
+          <van-icon name="star-o" size="24px" />
+          取消收藏
+        </view>
+      </van-swipe-cell>
+    </van-cell-group>
+  </van-skeleton>
+</block>
+
+<van-empty wx:else image="search" description="暂无内容" />
+<van-dialog id="van-dialog" />

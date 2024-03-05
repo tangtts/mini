@@ -1,0 +1,15 @@
+/* pages/list/list.wxss */
+.collect{
+  height: 100%;
+  width: 80px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.valueClass{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

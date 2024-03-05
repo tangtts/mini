@@ -1,0 +1,10 @@
+<view class="header_buttonGroup">
+  <text style="font-size: small;">您当前所在位置为:{{location}}
+  </text>
+  <van-button round icon="add-o" size="mini" bindtap="navigateToCreatePage" type="primary">新建</van-button>
+</view>
+
+<view class="container">
+  <map id="map" class="map" markers="{{markers}}" longitude="{{longitude}}" latitude="{{latitude}}">
+  </map>
+</view>

@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/list",
+    "pages/detail/detail",
+    "pages/collections/collections"
+  ],
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index"
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "餐厅记录",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar/home.png",
+        "selectedIconPath": "images/tabbar/homeSelected.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "列表",
+        "iconPath": "images/tabbar/list.png",
+        "selectedIconPath": "images/tabbar/listSelected.png"
+      },
+      {
+        "pagePath": "pages/collections/collections",
+        "text": "收藏",
+        "iconPath": "images/tabbar/collection.png",
+        "selectedIconPath": "images/tabbar/collectionSelected.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

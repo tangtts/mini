@@ -1,0 +1,48 @@
+<!--pages/detail/detail.wxml-->
+
+
+<view class="header_buttonGroup">
+  <van-button icon="revoke" round plain type="primary" size="small" bind:click="back">返回</van-button>
+
+  <van-button icon="delete-o" round plain type="danger" size="small" wx:if="{{!shouldDisabled}}" bind:click="del">删除</van-button>
+</view>
+
+<van-uploader multiple accept="image" file-list="{{ fileList }}" bind:after-read="afterRead" bind:delete="delete" sizeType="['compressed']" max-count="4" disabled="{shouldDisabled}" />
+
+<van-cell-group size="large">
+  <!-- 名称 -->
+  <van-field model:value="{{ restaurantName }}" placeholder="请输入饭店名称" label="名称" required disabled="{{shouldDisabled}}" />
+
+  <!-- 位置 -->
+  <van-field model:value="{{ restaurantAddress }}" placeholder="请选择位置" label="位置" required use-button-slot disabled="{{shouldDisabled}}">
+    <van-button slot="button" size="small" type="primary" bind:click="openMap" disabled="{{shouldDisabled}}">
+      选择位置
+    </van-button>
+  </van-field>
+  <!-- 日期 -->
+  <van-field model:value="{{ currentDate }}" placeholder="请选择日期" label="日期" use-button-slot disabled="{{shouldDisabled}}">
+    <van-button slot="button" size="small" type="primary" bind:click="openTimePicker" disabled="{{shouldDisabled}}">
+      选择日期
+    </van-button>
+  </van-field>
+  <!-- 评价 -->
+  <van-cell title="评价">
+    <van-rate value="{{ rate }}" allow-half color="#ffd21e" void-icon="star" void-color="#eee" disabled="{{shouldDisabled}}" bind:change="changeRate" />
+  </van-cell>
+  <!-- 备注 -->
+  <van-field model:value="{{ remark }}" disabled="{{shouldDisabled}}" placeholder="请输入备注" label="备注" type="textarea" autosize show-word-limit maxlength="100" />
+  <!-- 是否公开 -->
+  <van-cell title="是否公开" icon="info-o" label="公开以后让其他人看到">
+    <van-switch checked="{{ isPublic }}" bind:change="changePublicSwitch" disabled="{{shouldDisabled}}" size="24px" active-color="#07c160" />
+  </van-cell>
+</van-cell-group>
+
+<van-button type="primary" block bind:click="handleToUpdateOrCreate" class="mt-20" disabled="{{shouldDisabled}}">确定</van-button>
+
+
+
+<van-calendar show="{{ showTimePicker }}" bind:close="closeTimePicker" bind:confirm="onConfirm" />
+
+<!-- 日历面板 -->
+<van-calendar show="{{ showTimePicker }}" bind:close="closeTimePicker" bind:confirm="confirmToChooseDate" />
+<van-dialog id="van-dialog" />

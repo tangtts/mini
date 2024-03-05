@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-rate": "@vant/weapp/rate/index",
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "navigationBarTitleText": "记录列表",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

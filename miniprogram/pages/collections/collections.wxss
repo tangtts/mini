@@ -1,0 +1,10 @@
+/* pages/collections/collections.wxss */
+.collect{
+  height: 100%;
+  width: 120px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
