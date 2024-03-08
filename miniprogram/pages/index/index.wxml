@@ -5,6 +5,7 @@
 </view>
 
 <view class="container">
-  <map id="map" class="map" markers="{{markers}}" longitude="{{longitude}}" latitude="{{latitude}}">
+  <map id="map" class="map" data-item="{{markers}}" markers="{{markers}}" longitude="{{longitude}}" latitude="{{latitude}}" bindmarkertap="bindmarkertap">
   </map>
 </view>
+<van-dialog id="van-dialog" confirm-button-text="到这去" :show-cancel-button="{{true}}" />

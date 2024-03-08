@@ -1,17 +1,28 @@
 <!-- 顶部搜索 -->
-<van-search value="{{ restaurantName }}" placeholder="请输入搜索名称" bind:search="onSearch" bind:change="onChange">
+<van-search value="{{ restaurantName }}" placeholder="请输入搜索名称" bind:search="onSearchRestaurantName" bind:change="onChangeRestaurantName">
 </van-search>
+
+<van-dropdown-menu>
+  <van-dropdown-item value="{{ sortDropdownValue }}" options="{{ sortOption }}" bind:change="changeSortDropdown" />
+  <van-dropdown-item value="{{ dataDropdownValue }}" options="{{ dataOption }}" bind:change="changeDataDropdown" />
+</van-dropdown-menu>
+
 
 <block wx:if="{{list.length}}">
   <van-skeleton title row="2" loading="{{ loading }}">
     <van-cell-group>
       <van-swipe-cell right-width="{{ 80 }}" wx:for="{{list}}" wx:key="_id">
-        <van-cell
-        title-class="overflowEllipsis"
-         label-class="overflowEllipsis"
-         value-class="valueClass"
-         title="{{item.restaurantName}}" label="{{item.restaurantAddress}}" icon="location-o" data-id="{{item._id}}" bind:click="clickCell">
+        <van-cell title-class="overflowEllipsis" label-class="overflowEllipsis" value-class="valueClass" custom-class="customClass" title="{{item.restaurantName}}" label="{{item.restaurantAddress}}" icon="location-o" data-id="{{item._id}}" bind:click="clickCell">
           <van-rate value="{{ item.rate }}" color="#ffd21e" void-icon="star" void-color="#eee" allow-half readonly />
+
+          <view>
+            <van-tag type="success" wx:if="{{item.isPublic}}">公开</van-tag>
+            <van-tag type="danger" wx:else>私有</van-tag>
+            <view bind:tap="goToLocation" data-item="{{item}}" catchtap>
+              到这去
+              <van-icon name="guide-o" />
+            </view>
+          </view>
         </van-cell>
 
         <view slot="right" class="collect" bind:tap="collect" data-id="{{item._id}}">
@@ -23,6 +34,13 @@
   </van-skeleton>
 </block>
 
-<van-empty wx:else image="search" description="暂无内容" />
+<van-empty wx:else image="search" description="暂无内容">
+  <van-button round type="primary" class="bottom-button" bind:click="clickCell">去创建</van-button>
+</van-empty>
+
+
+<view style="position: fixed; right: 20px; bottom: 130px;">
+    <van-button round icon="plus" type="primary" bind:tap="clickCell" />
+</view>
 
 <van-toast id="van-toast" />

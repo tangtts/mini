@@ -15,22 +15,8 @@ App({
         traceUser: true,
       });
     }
-
-    wx.getLocation({
-      type: "wgs84",
-      // success: this.getLocation
-    })
-
     this.globalData = {
       MAP_KEY: "TZLBZ-SRGRU-DWZVG-GIZPU-OA2HJ-PVBU6"
     };
   },
-  getLocation(res){
-    wx.request({
-      url:`https://apis.map.qq.com/ws/location/v1/ip?key=${this.globalData.MAP_KEY}`,
-      success:(res)=>{
-        console.log(res)
-      }
-    })
-  }
 });

@@ -7,7 +7,7 @@
         <van-cell title="{{item.restaurantName}}" label="{{item.restaurantAddress}}" icon="star" data-id="{{item._id}}" bind:click="clickCell">
         </van-cell>
 
-        <view slot="right" class="collect" bind:tap="unCollect" data-id="{{item.collectId}}">
+        <view slot="right" class="collect" bind:tap="unCollect" data-item="{{item}}">
           <van-icon name="star-o" size="24px" />
           取消收藏
         </view>

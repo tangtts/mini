@@ -8,7 +8,10 @@
     "van-rate": "@vant/weapp/rate/index",
     "van-skeleton": "@vant/weapp/skeleton/index",
     "van-toast": "@vant/weapp/toast/index",
-    "van-empty": "@vant/weapp/empty/index"
+    "van-empty": "@vant/weapp/empty/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index"
   },
   "navigationBarTitleText": "记录列表",
   "enablePullDownRefresh": true,
