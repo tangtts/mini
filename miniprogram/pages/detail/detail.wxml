@@ -32,7 +32,7 @@
   <van-cell title="是否公开" icon="info-o" label="公开以后让其他人看到">
     <van-switch checked="{{ isPublic }}" bind:change="changePublicSwitch" disabled="{{shouldDisabled}}" size="24px" active-color="#07c160" />
   </van-cell>
-  <van-cell title="距离当前位置{{distance}}米" icon="aim">
+  <van-cell title="距离当前位置{{distance}}千米" icon="aim">
      
   </van-cell>
 

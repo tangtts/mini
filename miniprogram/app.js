@@ -15,8 +15,28 @@ App({
         traceUser: true,
       });
     }
+    
+    this.getCurrentLocation();
     this.globalData = {
-      MAP_KEY: "TZLBZ-SRGRU-DWZVG-GIZPU-OA2HJ-PVBU6"
-    };
+        MAP_KEY: "RZGBZ-XQWLP-46XDA-V7BSQ-B76AZ-3LFCV",
+        loc:{
+            latitude:30,
+            longitude: 120.13026
+        }
+      };
   },
+
+  getCurrentLocation(){
+    wx.getLocation({
+        type: "gcj02",
+        success: (res) => {
+            this.globalData.loc.latitude = res.latitude;
+            this.globalData.loc.longitude = res.longitude;
+        },
+        fail: (err) => {
+          console.log(err)
+        }
+      })
+  }
+
 });
