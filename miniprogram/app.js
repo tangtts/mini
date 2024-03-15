@@ -18,7 +18,7 @@ App({
     
     this.getCurrentLocation();
     this.globalData = {
-        MAP_KEY: "RZGBZ-XQWLP-46XDA-V7BSQ-B76AZ-3LFCV",
+        MAP_KEY: "TZLBZ-SRGRU-DWZVG-GIZPU-OA2HJ-PVBU6",
         loc:{
             latitude:30,
             longitude: 120.13026
@@ -38,5 +38,4 @@ App({
         }
       })
   }
-
 });

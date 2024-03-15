@@ -18,16 +18,15 @@ exports.main = async (event, context) => {
     maxDistance: 50000,
   })
 
+  // 公开的
   const publicRes = await db.collection("records").where({
     isPublic: true,
-    loc
   }).get();
 
+  // 自己非公开的
   const selfData = await db.collection("records").where({
     openId: openid,
-    // 去除自己已经公开的
     isPublic: _.neq(true),
-    loc
   }).get();
 
   const res = publicRes.data.concat(selfData.data);

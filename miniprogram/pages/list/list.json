@@ -14,5 +14,6 @@
   },
   "navigationBarTitleText": "记录列表",
   "enablePullDownRefresh": true,
-  "backgroundTextStyle": "dark"
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance":50
 }
